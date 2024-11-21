@@ -1,0 +1,101 @@
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">Cadastro de Cliente</h2>
+    <form name="clientForm" ng-submit="saveClient()" class="mt-3" novalidate>
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <!-- Tipo Cliente -->
+                <div class="form-group">
+                    <label for="type" class="form-label">Tipo Cliente *</label>
+                    <select id="type" ng-model="client.type" class="form-control" required>
+                        <option value="">Selecione o Tipo</option>
+                        <option value="Fisica">Física</option>
+                        <option value="Juridica">Jurídica</option>
+                    </select>
+                    <div class="text-danger mt-1" ng-show="clientForm.type.$error.required && clientForm.type.$touched">
+                        Por favor, selecione o tipo de cliente.
+                    </div>
+                </div>
+
+                <!-- Nome/Razão Social -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Nome/Razão Social *</label>
+                    <input id="name" type="text" ng-model="client.name" class="form-control" required>
+                    <div class="text-danger mt-1" ng-show="clientForm.name.$error.required && clientForm.name.$touched">
+                        Por favor, insira o nome ou a razão social.
+                    </div>
+                </div>
+
+                <!-- Documento -->
+                <div class="form-group">
+                    <label for="document" class="form-label">Documento *</label>
+                    <input id="document" type="text" ng-model="client.document"
+                        document-mask
+                        placeholder="{{ client.type === 'Fisica' ? 'CPF (999.999.999-99)' : 'CNPJ (99.999.999/9999-99)' }}"
+                        class="form-control" required>
+                    <div class="text-danger mt-1" ng-show="clientForm.document.$error.required && clientForm.document.$touched">
+                        Por favor, insira o CPF ou CNPJ.
+                    </div>
+                </div>
+
+                <!-- CEP -->
+                <div class="form-group">
+                    <label for="cep" class="form-label">CEP *</label>
+                    <input id="cep" type="text" ng-model="client.cep" ui-mask="99999-999"
+                        placeholder="00000-000" class="form-control" ng-blur="searchCEP()" required>
+                    <div class="text-danger mt-1" ng-show="clientForm.cep.$error.required && clientForm.cep.$touched">
+                        Por favor, insira o CEP.
+                    </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail *</label>
+                    <input id="email" type="email" ng-model="client.email" class="form-control" required>
+                    <div class="text-danger mt-1" ng-show="clientForm.email.$error.required && clientForm.email.$touched">
+                        Por favor, insira o e-mail.
+                    </div>
+                    <div class="text-danger mt-1" ng-show="clientForm.email.$error.email && clientForm.email.$touched">
+                        Insira um e-mail válido.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <!-- Nome Fantasia (only for Juridica) -->
+                <div class="form-group" ng-if="client.type === 'Juridica'">
+                    <label for="fantasyName" class="form-label">Nome Fantasia *</label>
+                    <input id="fantasyName" type="text" ng-model="client.fantasyName" class="form-control" required>
+                    <div class="text-danger mt-1" ng-show="clientForm.fantasyName.$error.required && clientForm.fantasyName.$touched">
+                        Por favor, insira o nome fantasia para clientes jurídicos.
+                    </div>
+                </div>
+
+                <!-- Endereço -->
+                <div class="form-group">
+                    <label for="address" class="form-label">Endereço</label>
+                    <input id="address" type="text" ng-model="client.address" class="form-control">
+                </div>
+
+                <!-- Bairro -->
+                <div class="form-group">
+                    <label for="neighborhood" class="form-label">Bairro</label>
+                    <input id="neighborhood" type="text" ng-model="client.neighborhood" class="form-control">
+                </div>
+
+                <!-- Cidade -->
+                <div class="form-group">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input id="city" type="text" ng-model="client.city" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-4 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2" ng-disabled="clientForm.$invalid">Salvar</button>
+            <a href="#/list" class="btn btn-secondary" ng-click="resetForm()">Cancelar</a>
+        </div>
+    </form>
+</div>

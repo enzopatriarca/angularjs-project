@@ -1,0 +1,45 @@
+/* Footer Styling */
+footer {
+    position: relative; /* Allows the footer to flow with content */
+    bottom: 0;
+    width: 100%;
+    background-color: #0056b3;
+    border-top: 1px solid #dee2e6;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Adds padding inside the footer */
+}
+
+footer .bg-primary {
+    background-color: #007bff !important;
+}
+
+footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer p, footer a {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+footer .p-3 {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer .social-icons {
+    margin-top: 1rem;
+}
+
+footer .social-icons a {
+    color: #007bff;
+    margin: 0 0.5rem;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #0056b3;
+}

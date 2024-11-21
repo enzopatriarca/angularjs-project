@@ -1,0 +1,77 @@
+/* General Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 3rem; /* Prevent footer from overlapping content */
+    overflow-y: auto; /* Enable scrolling */
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.container {
+    flex: 1; /* Makes the main content take up available space */
+    padding: 1.5rem; /* Adds padding for better spacing */
+}
+
+/* Typography */
+h1, h2 {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: #0056b3 !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+.p-3 {
+    padding: 1rem;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 0.5rem; /* Adds space below the label */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Adds space between form groups */
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #003567;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #4e555b;
+}
