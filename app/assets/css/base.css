@@ -13,7 +13,16 @@ body {
 
 .container {
     flex: 1; /* Makes the main content take up available space */
-    padding: 1.5rem; /* Adds padding for better spacing */
+    padding: 1rem; /* Adds padding for better spacing */
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-lg {
+    padding: 0.5rem 1rem;
 }
 
 /* Typography */

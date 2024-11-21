@@ -3,6 +3,7 @@
     background-color: #ffffff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    width: 100%;
 }
 
 .table th {
@@ -22,4 +23,77 @@
 .btn-lg {
     font-size: 1rem;
     padding: 10px 20px;
+}
+
+/* Responsive Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Mobile-Friendly Table Styling */
+@media (max-width: 768px) {
+    /* Hide table header on mobile */
+    .table thead {
+        display: none;
+    }
+
+    /* Stack rows */
+    .table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 1rem;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add labels for each cell */
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: capitalize;
+        flex: 1;
+        text-align: left;
+        color: #007bff;
+    }
+
+    /* Data Labels */
+    .table td:nth-child(1)::before {
+        content: "Tipo:";
+    }
+
+    .table td:nth-child(2)::before {
+        content: "Documento:";
+    }
+
+    .table td:nth-child(3)::before {
+        content: "Nome:";
+    }
+
+    .table td:nth-child(4)::before {
+        content: "Email:";
+    }
+
+    .table td:nth-child(5)::before {
+        content: "Ações:";
+    }
+
+    /* Full-width action buttons */
+    .btn {
+        width: 100%;
+    }
 }
